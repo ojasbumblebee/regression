@@ -29,5 +29,5 @@ Run the regression code
 python regression.py
 ```
 
-The results and discussion can be found in the [regression_project_report.pdf]()
+The results and discussion can be found in the [regression_project_report.pdf](https://github.ncsu.edu/ovbarve/Regression_analysis/blob/master/Regression_Project_report.pdf)
 Also all the output graphs can be found here in the [graphs folder](https://github.ncsu.edu/ovbarve/Regression_analysis/tree/master/graphs).
