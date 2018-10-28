@@ -65,7 +65,7 @@ input()
 
 regression_variables = list(df.keys())
 y = df[regression_variables[-1]]
-"""
+
 for count,variable in enumerate(regression_variables[:-1]):
 
     #prepare data by reshaping vector eg. [1, 2, 3] to [[1], [2], [3]]    
@@ -166,7 +166,7 @@ plt.title("QQplot for polynomial regression plot X1:  y = a0 + a1*x1 + a2*(x1**2
 plt.savefig("QQplot for polynomial.png")
 plt.show()
 input()
-"""
+
 #Task 3:
 #Multipvariable regression
 
