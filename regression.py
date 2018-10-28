@@ -43,7 +43,7 @@ regression_variable = list(df.keys())
 for count,variable in enumerate(regression_variable):
     print("mean of regression_variable: x"+str(count+1), df[variable].mean())
     print("variance of regression_variable: x"+str(count+1), df[variable].var())
-    #plot_histogram(df[variable], count)
+    plot_histogram(df[variable], count)
 
 
 #plot correlation matrix
