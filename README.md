@@ -1,8 +1,8 @@
 # Regression_analysis
 
 
-The regression analysis was carried ou on this data: ovbarve.csv 
-The analysis was carried out according to this project task list.
+The regression analysis was carried out on [this data: ovbarve.csv](https://github.ncsu.edu/ovbarve/Regression_analysis/blob/master/ovbarve.csv).
+The analysis was carried out according to [this project task list](https://github.ncsu.edu/ovbarve/Regression_analysis/blob/master/Multiple%20Regression.pdf).
 
 
 setup the environment
@@ -29,5 +29,5 @@ Run the regression code
 python regression.py
 ```
 
-The results and discussion can be found in the regression_project.pdf
-Also all the graphs can be found here.
+The results and discussion can be found in the [regression_project_report.pdf]()
+Also all the output graphs can be found here in the [graphs folder](https://github.ncsu.edu/ovbarve/Regression_analysis/tree/master/graphs).
