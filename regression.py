@@ -65,7 +65,7 @@ input()
 
 regression_variables = list(df.keys())
 y = df[regression_variables[-1]]
-
+"""
 for count,variable in enumerate(regression_variables[:-1]):
 
     #prepare data by reshaping vector eg. [1, 2, 3] to [[1], [2], [3]]    
@@ -79,6 +79,8 @@ for count,variable in enumerate(regression_variables[:-1]):
     
     #calculate residual array
     residual =  y - predictions
+    print("variance of residuals is :", np.var(residual))
+
     #residual qqplot
     sm.qqplot(residual)
     plt.title("QQ plot for single variable: X"+str(count))
@@ -131,6 +133,7 @@ predictions = model.predict(X)
 
 #residual calculation
 residual =  y - predictions 
+print("variance of residuals is :", np.var(residual))
 
 #residual scatter plot
 plt.scatter(predictions, residual,color='g')
@@ -163,7 +166,7 @@ plt.title("QQplot for polynomial regression plot X1:  y = a0 + a1*x1 + a2*(x1**2
 plt.savefig("QQplot for polynomial.png")
 plt.show()
 input()
-
+"""
 #Task 3:
 #Multipvariable regression
 
@@ -176,7 +179,7 @@ predictions = model.predict(X)
 
 #residual calculation and qqplot 
 residual =  y - predictions
-
+print("variance of residuals is :", np.var(residual))
 #residual scatter plot 
 plt.scatter(predictions, residual,color='g')
 plt.title("Residual scatter plot :  y = a0 + a1*x1 + a2*x2 + a3*x3 + a4*x4 + a5*x5")
@@ -186,7 +189,7 @@ plt.show()
 #residual histogram
 plt.hist(residual, bins=30)
 plt.title("Histogram of residual for polynomial regression :  y = a0 + a1*x1 + a2*x2 + a3*x3 + a4*x4 + a5*x5")        
-plt.savefig("residual histogram for multi_variable regression of x1.png")
+plt.savefig("residual histogram for multi_variable regression.png")
 plt.show()
 
 #Chi square test
@@ -203,6 +206,50 @@ fig.show()
 sm.qqplot(residual)
 plt.title("QQplot for multi variable regression plot :  y = a0 + a1*x1 + a2*x2 + a3*x3 + a4*x4 + a5*x5")
 plt.savefig("QQplot_for_multi_variable.png")
+plt.show()
+
+input()
+
+
+#Task 3: remove a non dependent variable x2
+#Multipvariable regression
+
+regression_variable = list(df.keys())
+multi_variables = tuple(zip(df[regression_variable[0]], df[regression_variable[2]], df[regression_variable[3]], df[regression_variable[4]]))
+X = sm.add_constant(multi_variables) # adding a constant
+     
+model = sm.OLS(y, X).fit()
+predictions = model.predict(X) 
+
+#residual calculation and qqplot 
+residual =  y - predictions
+
+#residual scatter plot 
+plt.scatter(predictions, residual,color='g')
+plt.title("Residual scatter plot :  y = a0 + a1*x1 + a3*x3 + a4*x4 + a5*x5")
+plt.savefig("Residual_scatter_plot_for_multi_variable_withoutx2.png")
+plt.show() 
+
+#residual histogram
+plt.hist(residual, bins=30)
+plt.title("Histogram of residual for polynomial regression :  y = a0 + a1*x1 + a3*x3 + a4*x4 + a5*x5")        
+plt.savefig("residual histogram for multi_variable regression_withoutx2.png")
+plt.show()
+
+#Chi square test
+print(stats.normaltest(residual))   
+
+print_model = model.summary()
+print(print_model)
+fig = plt.figure(figsize=(20,12))
+fig = sm.graphics.plot_partregress_grid(model, fig=fig)
+plt.title("Regression fit for multi variable regression plot :  y = a0 + a1*x1 + a3*x3 + a4*x4 + a5*x5")
+plt.savefig("Regression_fit_multi_variable_withoutx2.png")
+fig.show()
+
+sm.qqplot(residual)
+plt.title("QQplot for multi variable regression plot :  y = a0 + a1*x1 + a3*x3 + a4*x4 + a5*x5")
+plt.savefig("QQplot_for_multi_variable_withoutx2.png")
 plt.show()
 
 input()
