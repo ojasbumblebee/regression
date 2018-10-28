@@ -11,7 +11,7 @@ setup the environment
 install conda and setup env
 Download the installer:
 
-    Miniconda installer for Linux.
+   Download Miniconda installer for Linux.
 
 
 ```
