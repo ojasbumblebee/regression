@@ -58,7 +58,7 @@ print(df.shape)
 
 df = df[(np.abs(stats.zscore(df)) < 3).all(axis=1)]
 print(df.shape)
-input()
+input("press enter to continue")
 
 #Task 2
 #Linear regression
@@ -120,7 +120,7 @@ for count,variable in enumerate(regression_variables[:-1]):
     print('Coeff of determination:'+str(count), lm.score(current_independent_variable, y))
     print('correlation is:'+str(count), math.sqrt(lm.score(current_independent_variable, y)))
 
-input()
+input("press enter to continue")
 
 #Task 2: Polymnomial regression
 #fit for higher order polynomial:
@@ -165,7 +165,7 @@ sm.qqplot(residual)
 plt.title("QQplot for polynomial regression plot X1:  y = a0 + a1*x1 + a2*(x1**2)")
 plt.savefig("QQplot for polynomial.png")
 plt.show()
-input()
+input("press enter to continue")
 
 #Task 3:
 #Multipvariable regression
@@ -208,7 +208,7 @@ plt.title("QQplot for multi variable regression plot :  y = a0 + a1*x1 + a2*x2 +
 plt.savefig("QQplot_for_multi_variable.png")
 plt.show()
 
-input()
+input("press enter to continue")
 
 
 #Task 3: remove a non dependent variable x2
@@ -252,7 +252,7 @@ plt.title("QQplot for multi variable regression plot :  y = a0 + a1*x1 + a3*x3 +
 plt.savefig("QQplot_for_multi_variable_withoutx2.png")
 plt.show()
 
-input()
+input("press enter to continue")
 
 
 
